@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KR Celebrations | Luxury Gifting & Decor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfbf9; color: #1a1a1a; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        
+        /* PALETTE */
+        :root { 
+            --rose: #ff7096; 
+            --dark: #111111; 
+        } 
+        
+        .text-rose { color: var(--rose); }
+        .bg-rose { background-color: var(--rose); }
+        .hover-text-rose:hover { color: var(--rose); }
+        
+        ::selection { background-color: var(--rose); color: white; }
+        
+        /* GLASS EFFECTS */
+        .glass-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+        }
+
+        /* ANIMATIONS */
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .chat-open { transform: translateY(0) scale(1); opacity: 1; pointer-events: all; }
+        .chat-closed { transform: translateY(20px) scale(0.95); opacity: 0; pointer-events: none; }
+        
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .btn-alive {
+            background: linear-gradient(45deg, #ffffff, #fff0f5, #ffffff);
+            background-size: 200% 200%;
+            animation: shine 4s ease infinite;
+            border: 1px solid #eee;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(255, 112, 150, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 112, 150, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 112, 150, 0); }
+        }
+        .animate-pulse-ring { animation: pulse-ring 2s infinite; }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        .icon-wiggle { animation: wiggle 1.5s ease-in-out infinite; }
+        
+        /* MOBILE INPUT FIX */
+        input, textarea, select { font-size: 16px !important; } /* Prevents iOS zoom */
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <div class="glass-light rounded-full px-6 md:px-8 py-3 flex justify-between items-center w-full max-w-5xl shadow-xl shadow-black/5">
+            <div class="flex items-center gap-2 md:gap-3">
+                <span class="serif text-xl md:text-2xl font-bold tracking-tighter text-gray-900">KR<span class="text-rose italic">Celebrations</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center text-sm font-medium text-gray-500">
+                <a href="#services" class="hover:text-black transition duration-300">Collections</a>
+                <a href="#gallery" class="hover:text-black transition duration-300">Portfolio</a>
+                <a href="#about" class="hover:text-black transition duration-300">About</a>
+            </div>
+            <a href="https://wa.me/27123456789" class="bg-[#111] text-white px-5 py-2.5 md:px-8 md:py-3 rounded-full text-[10px] md:text-xs font-bold tracking-wide hover:bg-black transition shadow-lg transform active:scale-95 duration-300 flex items-center gap-2">
+                 Enquire <i class="fas fa-heart text-rose"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative h-[92vh] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="hero.jpg" class="w-full h-full object-cover opacity-100 object-center">
+            <div class="absolute inset-0 bg-white/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-[#fcfbf9]"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <div class="inline-block glass-light px-4 py-1.5 rounded-full mb-6 border border-gray-200 shadow-sm animate-fade-in">
+                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-gray-500">Curating Love in Gauteng</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-medium mb-6 md:mb-8 text-gray-900 leading-[1] tracking-tight drop-shadow-sm">
+                Unbox <span class="italic text-rose">Emotion.</span><br>
+                Create <span class="italic text-gray-400 font-light">Memories.</span>
+            </h1>
+            
+            <p class="text-gray-800 text-sm md:text-xl mb-10 md:mb-12 font-light max-w-xs md:max-w-lg mx-auto leading-relaxed glass-light p-4 md:p-6 rounded-3xl shadow-sm border border-white">
+                We specialize in bespoke gift boxes, dreamy romantic setups, and luxury decor that turns ordinary days into core memories.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-5 items-center w-full px-6">
+                <button onclick="toggleChat()" class="w-full md:w-auto bg-[#111] text-white px-8 py-4 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase hover:bg-black hover:scale-105 transition shadow-2xl">
+                    Start Planning
+                </button>
+                <a href="#gallery" class="w-full md:w-auto bg-white text-black px-8 py-4 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase hover:bg-gray-50 transition shadow-md border border-gray-100">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 px-4 md:px-6 max-w-7xl mx-auto relative">
+        <div class="text-center mb-16">
+            <span class="text-gray-400 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Our Offerings</span>
+            <h2 class="text-4xl md:text-5xl serif mt-3 mb-4 text-gray-900">How do you want to say it?</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="group relative rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200 cursor-pointer h-[450px] md:h-[550px]">
+                <img src="gift.jpg" class="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-500"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full translate-y-2 group-hover:translate-y-0 transition duration-500">
+                    <h3 class="text-2xl md:text-3xl text-white serif italic mb-3">Luxury Gifting</h3>
+                    <p class="text-gray-200 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed font-light opacity-90">Personalized hampers for Him & Her. Curated boxes for birthdays, corporate, or "just because."</p>
+                    <button onclick="toggleChat()" class="w-full bg-white text-black py-3 md:py-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-rose hover:text-white transition shadow-lg border border-white">Curate a Box</button>
+                </div>
+            </div>
+
+            <div class="group relative rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200 cursor-pointer h-[450px] md:h-[550px]">
+                <img src="romance.jpg" class="absolute inset-0 w-full h-full object-cover object-center transition duration-1000 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-500"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full translate-y-2 group-hover:translate-y-0 transition duration-500">
+                    <h3 class="text-2xl md:text-3xl text-white serif italic mb-3">Romantic Setups</h3>
+                    <p class="text-gray-200 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed font-light opacity-90">Intimate hotel or home styling. Petals, candles, and ambiance creating the perfect proposal.</p>
+                    <button onclick="toggleChat()" class="w-full bg-white text-black py-3 md:py-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-rose hover:text-white transition shadow-lg border border-white">Plan a Date</button>
+                </div>
+            </div>
+
+            <div class="group relative rounded-[2rem] overflow-hidden shadow-xl shadow-gray-200 cursor-pointer h-[450px] md:h-[550px]">
+                <img src="balloon.jpg" class="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition duration-500"></div>
+                <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full translate-y-2 group-hover:translate-y-0 transition duration-500">
+                    <h3 class="text-2xl md:text-3xl text-white serif italic mb-3">Events & Decor</h3>
+                    <p class="text-gray-200 text-xs md:text-sm mb-6 md:mb-8 leading-relaxed font-light opacity-90">High-end balloon garlands, stylish backdrops for girls' nights, showers, and milestone birthdays.</p>
+                    <button onclick="toggleChat()" class="w-full bg-white text-black py-3 md:py-4 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider hover:bg-rose hover:text-white transition shadow-lg border border-white">View Options</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white relative overflow-hidden rounded-[2.5rem] my-8 mx-4 md:mx-8 shadow-xl shadow-gray-100">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <div class="relative group">
+                        <img src="about.jpg" class="w-full rounded-[2rem] shadow-2xl shadow-gray-200 object-cover h-[400px] md:h-[600px] transition duration-700 group-hover:scale-[1.02]">
+                    </div>
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2">
+                    <span class="text-gray-400 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase bg-gray-50 px-4 py-2 rounded-full">The KR Standard</span>
+                    <h2 class="text-4xl md:text-5xl serif mt-6 md:mt-8 mb-6 md:mb-8 leading-tight text-gray-900">Love is in the <br><span class="italic text-rose">Details.</span></h2>
+                    <div class="space-y-6 text-gray-600 font-light leading-relaxed text-base md:text-lg">
+                        <p>At KR Celebrations, we believe a gift isn't just an item; it's a feeling made tangible. We take the stress out of planning so you can focus on the moment.</p>
+                        <p>We source premium products—from gourmet treats to luxury self-care items—packaging them with our signature romantic flair.</p>
+                    </div>
+                    
+                    <div class="mt-8 md:mt-12 flex gap-8 md:gap-12 pt-8 border-t border-gray-100">
+                        <div>
+                            <h4 class="text-3xl md:text-4xl font-serif text-gray-900">500+</h4>
+                            <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-400 mt-2 font-bold">Moments Created</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl md:text-4xl font-serif text-gray-900">100%</h4>
+                            <p class="text-[10px] md:text-xs uppercase tracking-wider text-gray-400 mt-2 font-bold">Bespoke Service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 px-4 md:px-8 max-w-7xl mx-auto bg-[#fcfbf9]">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 md:mb-12 gap-4">
+            <div>
+                <span class="text-gray-400 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase">Visual Diary</span>
+                <h2 class="text-3xl md:text-4xl serif mt-2">Recent Celebrations</h2>
+            </div>
+            
+            <a href="https://www.tiktok.com/@kr.celebrations" target="_blank" class="btn-alive flex items-center gap-3 text-xs md:text-sm font-bold text-gray-800 px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 w-full md:w-auto justify-center">
+                <i class="fab fa-tiktok text-lg md:text-xl icon-wiggle text-black"></i> 
+                Follow our journey
+            </a>
+        </div>
+
+        <div class="columns-2 md:columns-3 gap-3 md:gap-4 space-y-3 md:space-y-4">
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery1.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery2.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery3.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery4.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery5.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+            <div class="break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden shadow-sm group relative"><img src="gallery6.jpg" class="w-full h-auto transform transition duration-700 group-hover:scale-105"></div>
+        </div>
+    </section>
+
+    <footer class="bg-[#111] text-white py-16 md:py-20 rounded-t-[2.5rem] md:rounded-t-[3rem] mt-12 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-3 gap-10 text-center md:text-left">
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="mb-4 md:mb-6 text-3xl font-serif">
+                        KR<span class="italic text-rose">Celebrations</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Premium gifting and event styling services based in 
+                        <span class="text-white font-semibold">Centurion</span>, proudly serving the greater Gauteng area.
+                    </p>
+                    <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-rose">
+                        <i class="fas fa-map-marker-alt"></i> We come to you
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-serif text-lg md:text-xl mb-4 md:mb-6">Get in Touch</h4>
+                    <div class="space-y-3 md:space-y-4 text-sm text-gray-400">
+                        <p><i class="fas fa-envelope mr-2 text-gray-600"></i> kgopotsoreality8@gmail.com</p>
+                        <p><i class="fas fa-clock mr-2 text-gray-600"></i> Mon - Fri: 09:00 - 18:00</p>
+                        <p><i class="fas fa-calendar-check mr-2 text-gray-600"></i> Weekends by Appointment</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <h4 class="text-white font-serif text-lg md:text-xl mb-4 md:mb-6">Follow Us</h4>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://www.instagram.com/krcelebrations_est2025" target="_blank" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-lg md:text-xl"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@kr.celebrations" target="_blank" class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-rose hover:text-white transition duration-300">
+                            <i class="fab fa-tiktok text-lg md:text-xl"></i>
+                        </a>
+                    </div>
+                    <a href="https://wa.me/27123456789" class="text-xs md:text-sm border-b border-rose pb-1 hover:text-rose transition">Chat on WhatsApp</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-[10px] md:text-xs text-gray-600 uppercase tracking-widest">© 2026 KR Celebrations. Automated by Automania.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-50 bg-rose text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 hover:bg-black transition duration-300 group ring-4 ring-rose/20 animate-pulse-ring">
+        <i class="fas fa-comment-dots text-lg"></i>
+        <span class="font-bold tracking-wide text-xs">Chat Live</span>
+    </button>
+    
+    <div id="chat-window" class="fixed bottom-20 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[360px] bg-white rounded-[1.5rem] md:rounded-[2rem] shadow-2xl z-50 border border-gray-100 transition-all duration-300 chat-closed flex flex-col h-[50vh] md:h-[520px] overflow-hidden ring-1 ring-black/5">
+        <div class="bg-rose text-white p-5 md:p-6 flex items-center justify-between relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-md"></div>
+            <div class="flex items-center space-x-3 relative z-10">
+                <div class="w-2.5 h-2.5 bg-white rounded-full animate-pulse shadow-[0_0_10px_white]"></div>
+                <span class="font-bold tracking-widest text-xs uppercase">KR Online Desk</span>
+            </div>
+            <button onclick="toggleChat()" class="text-white/80 hover:text-white relative z-10"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div id="messages" class="flex-1 p-5 md:p-6 overflow-y-auto bg-[#fcfbf9] space-y-4 text-sm">
+            <div class="flex items-start space-x-3">
+                <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-rose flex items-center justify-center text-white text-[10px] font-bold shadow-sm shrink-0">KR</div>
+                <div class="bg-white p-3.5 md:p-4 rounded-2xl rounded-tl-none shadow-sm text-gray-700 border border-gray-100/50 max-w-[90%] leading-relaxed">
+                    Hello! ✨ Welcome to the KR Online Desk. We are based in Centurion but deliver across Gauteng. How can we help you celebrate today?
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 bg-white border-t border-gray-50">
+            <form id="chat-form" onsubmit="sendMessage(event)" class="relative">
+                <input type="text" id="user-input" placeholder="Type your message..." class="w-full bg-gray-100 rounded-full pl-5 pr-12 py-3 md:py-4 text-sm focus:outline-none focus:ring-2 focus:ring-rose/30 transition-all placeholder:text-gray-400">
+                <button type="submit" class="absolute right-2 top-1.5 md:top-2 bg-rose text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center hover:bg-black transition shadow-sm"><i class="fas fa-arrow-up text-xs md:text-sm"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatWindow = document.getElementById('chat-window');
+            if (chatWindow.classList.contains('chat-closed')) {
+                chatWindow.classList.remove('chat-closed');
+                chatWindow.classList.add('chat-open');
+            } else {
+                chatWindow.classList.remove('chat-open');
+                chatWindow.classList.add('chat-closed');
+            }
+        }
+
+        async function sendMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('user-input');
+            const message = input.value;
+            if (!message) return;
+
+            // --- 1. GENERATE SESSION ID ---
+            let sessionId = localStorage.getItem('kr_session_id');
+            if (!sessionId) {
+                sessionId = 'session_' + Math.random().toString(36).substring(2, 15);
+                localStorage.setItem('kr_session_id', sessionId);
+            }
+
+            // --- 2. DISPLAY USER MESSAGE ---
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML += `
+                <div class="flex items-end justify-end space-x-2 animate-fade-in-up">
+                    <div class="bg-[#111] text-white p-3.5 md:p-4 rounded-2xl rounded-tr-none shadow-md max-w-[90%] leading-relaxed">${message}</div>
+                </div>`;
+            input.value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // --- 3. DISPLAY LOADING BUBBLE ---
+            const loadingId = 'loading-' + Date.now();
+            messagesDiv.innerHTML += `
+                <div id="${loadingId}" class="flex items-start space-x-3">
+                    <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-rose flex items-center justify-center text-white text-[10px] font-bold shrink-0">KR</div>
+                    <div class="bg-white p-3.5 md:p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100/50">
+                        <i class="fas fa-circle-notch animate-spin text-rose"></i>
+                    </div>
+                </div>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // --- 4. DUAL WEBHOOK LOGIC ---
+            const webhookProd = 'https://n8n.automania.cloud/webhook/KR';
+            const webhookTest = 'https://n8n.automania.cloud/webhook-test/KR';
+
+            try {
+                let response = await fetch(webhookProd, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        chatInput: message,
+                        sessionId: sessionId
+                    })
+                });
+
+                if (!response.ok) throw new Error('Production webhook failed');
+
+                const data = await response.json();
+                const aiResponse = data.output || data.text || "Thank you for your message. We will be in touch shortly.";
+
+                document.getElementById(loadingId).remove();
+                messagesDiv.innerHTML += `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-rose flex items-center justify-center text-white text-[10px] font-bold shrink-0">KR</div>
+                        <div class="bg-white p-3.5 md:p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100/50 max-w-[90%] text-gray-700 leading-relaxed">
+                            ${aiResponse}
+                        </div>
+                    </div>`;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            } catch (prodError) {
+                console.warn("Production webhook failed, trying Test webhook...");
+                
+                try {
+                    const testResponse = await fetch(webhookTest, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            chatInput: message,
+                            sessionId: sessionId 
+                        })
+                    });
+
+                    if (!testResponse.ok) throw new Error('Test webhook failed');
+
+                    const testData = await testResponse.json();
+                    const aiResponse = testData.output || testData.text || "Message received (Test Mode).";
+
+                    document.getElementById(loadingId).remove();
+                    messagesDiv.innerHTML += `
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-rose flex items-center justify-center text-white text-[10px] font-bold shrink-0">KR</div>
+                            <div class="bg-white p-3.5 md:p-4 rounded-2xl rounded-tl-none shadow-sm border border-gray-100/50 max-w-[90%] text-gray-700 leading-relaxed">
+                                ${aiResponse}
+                            </div>
+                        </div>`;
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+                } catch (finalError) {
+                    document.getElementById(loadingId).remove();
+                    messagesDiv.innerHTML += `
+                    <div class="flex items-start space-x-2">
+                        <div class="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center text-white text-[10px] font-bold">!</div>
+                        <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-red-100 text-red-500 text-xs">
+                            System offline. Please contact us on WhatsApp directly.
+                        </div>
+                    </div>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
